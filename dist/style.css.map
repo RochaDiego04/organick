@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../src/scss/style.scss"],"names":[],"mappings":"AAAA;EACE;EACA;;AACA;EACE","file":"style.css"}
+{"version":3,"sources":["components/header.scss","style.css"],"names":[],"mappings":"AAEA,aACE,cCDF","file":"style.css","sourcesContent":["@use \"../util\" as *;\n\n.header-test {\n  font-size: rem(80);\n}\n",".header-test {\n  font-size: 5rem;\n}"]}
