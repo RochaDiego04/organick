@@ -1,0 +1,68 @@
+@use "../util" as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-default);
+  font-size: rem(18);
+}
+
+h1 {
+  font-size: rem(70);
+  line-height: rem(84);
+  letter-spacing: 0.36px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: rem(54);
+    line-height: rem(64);
+  }
+}
+
+h2 {
+  font-size: rem(48);
+  line-height: rem(56);
+  letter-spacing: 0.36px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: rem(40);
+    line-height: rem(48);
+  }
+}
+
+h3 {
+  font-size: rem(40);
+  line-height: rem(48);
+  letter-spacing: 0.36px;
+}
+
+h4 {
+  font-size: rem(30);
+  line-height: rem(32);
+  font-weight: 400;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
