@@ -1,4 +1,3 @@
-// Initialize modules
 const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
@@ -8,13 +7,10 @@ const babel = require("gulp-babel");
 const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
 
-// Use dart-sass for @use
-//sass.compiler = require('dart-sass');
-
 // Sass Task
 function scssTask() {
   return src("src/scss/style.scss", { sourcemaps: true })
-    .pipe(sass())
+    .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest("dist", { sourcemaps: "." }));
 }
@@ -27,7 +23,7 @@ function jsTask() {
     .pipe(dest("dist", { sourcemaps: "." }));
 }
 
-// Browsersync
+// Browsersync Serve
 function browserSyncServe(cb) {
   browsersync.init({
     server: {
@@ -42,6 +38,8 @@ function browserSyncServe(cb) {
   });
   cb();
 }
+
+// Browsersync Reload
 function browserSyncReload(cb) {
   browsersync.reload();
   cb();
@@ -51,7 +49,7 @@ function browserSyncReload(cb) {
 function watchTask() {
   watch("*.html", browserSyncReload);
   watch(
-    ["src/scss/**/*.scss", "src/**/*.js"],
+    ["src/scss/**/*.scss", "src/js/**/*.js"],
     series(scssTask, jsTask, browserSyncReload)
   );
 }

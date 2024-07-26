@@ -1,0 +1,177 @@
+@use "../util" as *;
+@use "../util/mixins" as m;
+
+.navigation {
+  &__checkbox {
+    position: absolute;
+    appearance: none;
+    z-index: -1;
+  }
+
+  &__button {
+    display: none;
+    background-color: transparent;
+    height: rem(30);
+    width: rem(30);
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.8s;
+
+    @include m.respond(tab-port) {
+      position: fixed;
+      display: block;
+      top: rem(35);
+      right: rem(25);
+    }
+  }
+
+  &__icon {
+    @include m.respond(tab-port) {
+      position: relative;
+      margin-top: rem(14);
+
+      &,
+      &::before,
+      &::after {
+        width: rem(25);
+        height: 2px;
+        background-color: var(--body);
+        display: inline-block;
+        transition: all 0.2s;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+      }
+
+      &::before {
+        top: rem(-10);
+      }
+
+      &::after {
+        top: rem(10);
+      }
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: rem(-11);
+  }
+
+  &__button:hover &__icon::after {
+    top: rem(11);
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    @include m.respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__list {
+    font-size: rem(20);
+    display: flex;
+    gap: rem(20);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+
+    @include m.respond(tab-port) {
+      display: block;
+    }
+  }
+
+  &__item {
+    @include m.respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: var(--body);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &--home.active {
+      color: var(--primary);
+    }
+  }
+
+  // FUNCTIONALITY (APPEAR AND DISAPPEAR)
+  &__checkbox:checked ~ .navigation__background {
+    height: 100%;
+    transition: height 0.5s ease-in-out;
+  }
+
+  &__checkbox:checked ~ .navigation__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    transform: translate(0, -50%);
+    left: rem(2);
+    background-color: transparent;
+    z-index: 1000;
+  }
+
+  &__checkbox:checked ~ .navigation__nav .navigation__list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+  }
+
+  &__checkbox:checked ~ .navigation__nav .navigation__item {
+    display: inline-block;
+    margin: rem(20);
+  }
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--white);
+    z-index: 500;
+    transition: height 0.5s ease-in-out;
+  }
+}
+
+.header {
+  &__logo {
+    position: relative;
+    z-index: 2001;
+    transition: position 0.5s ease;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: rem(20);
+  }
+}

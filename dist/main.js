@@ -1,1 +1,1 @@
-"use strict";document.addEventListener("DOMContentLoaded",(function(){console.log("Hello World")}));//# sourceMappingURL=main.js.map
+"use strict";document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector(".navigation__link--home"),n=document.getElementById("navi-toggle");function t(){window.innerWidth>=838&&(n.checked=!1)}"/"!==window.location.pathname&&""!==window.location.pathname||e.classList.add("active"),window.addEventListener("resize",t),t()}));//# sourceMappingURL=main.js.map
