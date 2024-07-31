@@ -1,0 +1,28 @@
+@use "../util" as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-image: url(/images/bg_images/Hero.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 80vh;
+  transition: all 0.4s;
+
+  @media (max-width: 768px) {
+    height: 70vh;
+    background-position: 30% center;
+  }
+
+  &__text {
+    padding-left: rem(40);
+    grid-column: 1 / 2;
+    align-self: center;
+
+    @media (max-width: 768px) {
+      grid-column: 1/ -1;
+      padding-right: rem(120);
+    }
+  }
+}

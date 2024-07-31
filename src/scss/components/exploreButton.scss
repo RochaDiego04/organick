@@ -1,0 +1,45 @@
+@use "../util" as *;
+
+.exploreButton {
+  color: var(--body);
+
+  &,
+  &:link,
+  &:visited {
+    text-transform: capitalize;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(15);
+    padding: rem(24);
+    border-radius: rem(16);
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      padding: rem(16) rem(24);
+    }
+  }
+
+  &__arrow {
+    height: 40rem;
+    width: 40rem;
+    fill: #000;
+  }
+
+  &--orange {
+    background-color: var(--secondary);
+  }
+
+  &--blue {
+    color: var(--white);
+    background-color: var(--body);
+  }
+
+  &--bordered {
+    background-color: transparent;
+  }
+}

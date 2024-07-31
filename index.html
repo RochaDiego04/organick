@@ -82,8 +82,43 @@
         </div>
       </div>
     </header>
+    <!-- stuffed element when header is fixed so page dont move up -->
+    <div class="pollyfill"></div>
 
-    <div class="body"></div>
+    <div class="content">
+      <section class="hero">
+        <div class="hero__text">
+          <p class="hero__displayText displayText">Made with Nature</p>
+          <h1 class="hero__title">
+            Welcome to the world of nature and organic.
+          </h1>
+          <a href="#" class="exploreButton exploreButton--orange">
+            Explore Now
+            <!-- <svg class="exploreButton__arrow"> 
+              TODO
+              <use xlink:href="images/Arrow.svg#arrow"></use>
+            </svg> -->
+          </a>
+        </div>
+      </section>
+      <!--.hero-->
+
+      <section class="offerCard">
+        <div class="offerCard__card offerCard__card--1">
+          <div class="offerCard__card__container">
+            <p class="offerCard__card__displayText displayText">Natural!!</p>
+            <h3 class="offerCard__card__title">Get Garden Fresh Fruits</h3>
+          </div>
+        </div>
+        <div class="offerCard__card offerCard__card--2">
+          <div class="offerCard__card__container">
+            <p class="offerCard__card__displayText displayText">Offer!!</p>
+            <h3 class="offerCard__card__title">Get 10% off on Vegetables</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--.content-->
     <script src="src/js/main.js"></script>
   </body>
 </html>
