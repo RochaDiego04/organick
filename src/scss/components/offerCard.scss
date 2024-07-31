@@ -1,4 +1,5 @@
 @use "../util" as *;
+@use "../util/mixins.scss" as m;
 
 .offerCard {
   // offerCards section
@@ -7,7 +8,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: rem(20);
 
-  @media (max-width: 768px) {
+  @include m.respond(tab-port) {
     display: block;
   }
 
@@ -22,7 +23,14 @@
     transition: all 0.3s;
     z-index: -1;
 
-    @media (max-width: 768px) {
+    &:nth-of-type(1) {
+      .offerCard__card__displayText,
+      .offerCard__card__title {
+        color: var(--white);
+      }
+    }
+
+    @include m.respond(tab-port) {
       background-position: 30% center;
       &:not(:last-child) {
         margin-bottom: rem(20);

@@ -16,6 +16,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--white);
   font-family: var(--font-default);
   font-size: rem(20);
   line-height: rem(32);
@@ -79,6 +80,20 @@ h4 {
     font-size: rem(28);
     line-height: rem(48);
     font-weight: normal;
+  }
+}
+
+.subtitle1 {
+  font-size: rem(22);
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+.subtitle2 {
+  font-size: rem(24);
+  &--bold {
+    font-weight: 700;
   }
 }
 
