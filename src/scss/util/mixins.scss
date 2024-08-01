@@ -20,8 +20,8 @@
     }
   }
   @if $breakpoint == tab-land {
-    // width < 900
-    @media (max-width: 75em) {
+    // width < 950
+    @media (max-width: 82.72em) {
       @content;
     }
   }

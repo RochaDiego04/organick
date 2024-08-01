@@ -1,4 +1,5 @@
 @use "../util" as *;
+@use "../util/mixins.scss" as m;
 
 html {
   font-size: 100%;
@@ -21,7 +22,7 @@ body {
   font-size: rem(20);
   line-height: rem(32);
   color: var(--body);
-  @media (max-width: 768px) {
+  @include m.respond(tab-port) {
     font-size: rem(18);
   }
 }
@@ -33,7 +34,7 @@ h1 {
   font-weight: 400;
 }
 
-@media (max-width: 768px) {
+@include m.respond(tab-port) {
   h1 {
     font-size: rem(54);
     line-height: rem(64);
@@ -47,7 +48,7 @@ h2 {
   font-weight: 400;
 }
 
-@media (max-width: 768px) {
+@include m.respond(tab-port) {
   h2 {
     font-size: rem(40);
     line-height: rem(48);
@@ -75,7 +76,7 @@ h4 {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@include m.respond(tab-port) {
   .displayText {
     font-size: rem(28);
     line-height: rem(48);
@@ -94,6 +95,29 @@ h4 {
   font-size: rem(24);
   &--bold {
     font-weight: 700;
+  }
+}
+
+.label {
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(16);
+  color: var(--white);
+  background-color: var(--body);
+  border-radius: rem(8);
+  padding: rem(10) rem(25);
+  display: flex;
+  justify-content: center;
+  &--bold {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: var(--white);
+    background-color: var(--body);
+    border-radius: rem(8);
+    padding: rem(10) rem(25);
+    display: flex;
+    justify-content: center;
   }
 }
 

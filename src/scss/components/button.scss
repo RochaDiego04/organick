@@ -9,9 +9,6 @@
   &:visited {
     text-transform: capitalize;
     text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     gap: rem(15);
     padding: rem(24);
     border-radius: rem(16);
@@ -19,6 +16,9 @@
     // Change for the <button> element
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
 
     @include m.respond(tab-port) {
       padding: rem(16) rem(24);
@@ -26,9 +26,17 @@
   }
 
   &__arrow {
-    height: 40rem;
-    width: 40rem;
-    fill: #000;
+    width: 100%; /* Make it responsive to parent element */
+    max-width: rem(37);
+    max-height: rem(15);
+    &--blue {
+      fill: transparent;
+      stroke: var(--body);
+    }
+    &--white {
+      fill: transparent;
+      stroke: var(--white);
+    }
   }
 
   &--orange {
