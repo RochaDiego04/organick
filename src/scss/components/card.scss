@@ -38,11 +38,11 @@
     padding-top: rem(10);
     display: flex;
     flex: auto auto 1fr;
+    gap: rem(10);
     @include m.respond(tab-port) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
-    gap: rem(10);
   }
   &__crossedOutPrice {
     font-size: rem(18);

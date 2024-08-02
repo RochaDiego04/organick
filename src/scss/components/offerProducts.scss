@@ -1,0 +1,33 @@
+@use "../util" as *;
+@use "../util/mixins.scss" as m;
+
+.offerProducts {
+  padding: rem(64) rem(20);
+  position: relative;
+  background-color: var(--body);
+  z-index: -10;
+
+  &__title {
+    color: var(--white);
+    @include m.respond(tab-port) {
+      max-width: rem(350);
+      margin-bottom: rem(20);
+    }
+  }
+  &__topSectionContainer {
+    display: grid;
+    gap: rem(20);
+    grid-template-columns: 1fr auto;
+    margin-bottom: rem(35);
+    @include m.respond(tab-port) {
+      display: block;
+    }
+  }
+  &__button {
+    margin-top: rem(-20);
+    align-self: flex-start;
+    @include m.respond(tab-port) {
+      margin-top: rem(0);
+    }
+  }
+}
