@@ -1,0 +1,68 @@
+@use "../util" as *;
+@use "../util/mixins.scss" as m;
+
+.ecoFriendly {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  position: relative;
+  @include m.respond(tab-port) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+  }
+
+  &__image {
+    width: 100%;
+    background-image: url(/images/bg_images/EcoFriendly.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include m.respond(tab-port) {
+      height: 100%;
+      grid-column: 1;
+      grid-row: 1/2;
+    }
+  }
+
+  &__blank-space {
+    width: 100%;
+    @include m.respond(tab-port) {
+      height: 100%;
+      grid-row: 2/3;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__overlay-card {
+    min-height: rem(570);
+    max-width: rem(720);
+    border-radius: rem(32);
+    background-color: var(--white);
+    box-shadow: rem(16) rem(24) rem(52) rem(-8) rgba(0, 0, 0, 0.2);
+
+    top: 43%;
+    right: 0;
+    transform: translate(0, -50%);
+    position: absolute;
+    padding: rem(25) rem(36) rem(50) rem(36);
+    margin: 5vh 5vw;
+
+    @include m.respond(tab-port) {
+      top: 50%;
+      rigth: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(40);
+  }
+  &__list {
+    list-style: none;
+    &--item {
+      &:not(:nth-last-of-type(1)) {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+}
