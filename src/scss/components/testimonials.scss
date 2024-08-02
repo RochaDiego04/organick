@@ -1,0 +1,61 @@
+@use "../util" as *;
+@use "../util/mixins.scss" as m;
+
+.testimonials {
+  display: flex;
+  flex: 1/3fr 1fr 1/3fr;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  position: relative;
+
+  &__leftImage,
+  &__rightImage {
+    background-size: cover;
+    @include m.respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__container {
+    flex: 1;
+    max-width: 900px;
+    padding: rem(160) rem(20);
+    margin: 0 auto;
+    text-align: center;
+
+    @include m.respond(tab-land) {
+      padding: rem(80) rem(20);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(54);
+  }
+
+  &__profileImage {
+    border-radius: 100%;
+  }
+
+  &__stars {
+    margin-bottom: rem(20);
+    &--star {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+
+  &__text {
+    margin-bottom: rem(20);
+  }
+
+  &__name {
+    margin-bottom: rem(10);
+  }
+
+  &__label {
+    color: var(--grey5);
+    font-size: rem(14);
+    line-height: rem(16);
+  }
+}
