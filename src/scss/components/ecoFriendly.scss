@@ -9,6 +9,7 @@
   @include m.respond(tab-port) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
+    height: 70vh;
   }
 
   &__image {
