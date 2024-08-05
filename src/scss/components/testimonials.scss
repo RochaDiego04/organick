@@ -8,6 +8,7 @@
   align-items: center;
   background-color: #fcfcfc;
   position: relative;
+  z-index: -10;
 
   &__leftImage,
   &__rightImage {

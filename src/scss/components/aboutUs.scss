@@ -63,9 +63,21 @@
 
     &--item {
       margin-bottom: rem(24);
+      display: flex;
+      align-items: center;
+      gap: rem(20);
+    }
+
+    &--itemImage {
+      width: rem(64);
+      height: rem(64);
+      border-radius: rem(20);
+      background-color: white;
+      padding: rem(13);
     }
 
     &--itemSubtitle {
+      margin-bottom: rem(10);
     }
 
     &--itemText {
