@@ -1,0 +1,20 @@
+@use "../util" as *;
+@use "../util/mixins.scss" as m;
+
+.textInput {
+  max-width: rem(400);
+  height: rem(80);
+  border-radius: rem(16);
+  padding: rem(24) rem(15);
+  font-size: rem(18);
+  border: none;
+  color: var(--body);
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-size: rem(16);
+    color: var(--grey5);
+  }
+}

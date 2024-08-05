@@ -14,6 +14,9 @@
     @include m.respond(tab-port) {
       display: block;
     }
+    @include m.respond(phone) {
+      padding: rem(80) rem(20) rem(50) rem(20);
+    }
   }
 
   &__card {
