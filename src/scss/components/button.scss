@@ -49,6 +49,7 @@
   }
 
   &--bordered {
+    border: 1px solid var(--body) !important;
     background-color: transparent;
   }
 }
