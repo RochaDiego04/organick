@@ -19,10 +19,22 @@
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
+    transition: all 0.2s;
 
     @include m.respond(tab-port) {
       padding: rem(16) rem(24);
     }
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.17);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.17);
   }
 
   &__arrow {
@@ -49,6 +61,7 @@
   }
 
   &--bordered {
+    border: 1px solid var(--body) !important;
     background-color: transparent;
   }
 }
