@@ -37,25 +37,22 @@
     margin-bottom: rem(80);
     @include m.respond(tab-port) {
       display: block;
-      margin-bottom: rem(60);
+      margin-bottom: 0;
     }
   }
 
   &__card {
     border-radius: rem(32);
     padding: rem(25);
-    width: rem(665);
+    padding-bottom: 0;
+    max-width: rem(665);
     height: rem(572);
-    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 
     @include m.respond(tab-port) {
       width: 100%;
       max-width: rem(500);
-      margin: 0 auto rem(80) auto;
-    }
-
-    @include m.respond(tab-port) {
-      margin: 0 auto rem(130) auto;
     }
 
     &__date {
@@ -80,16 +77,13 @@
     }
 
     &__information {
+      justify-self: center;
       background-color: white;
       padding: rem(52);
       border-radius: rem(32);
       box-shadow: rem(16) rem(24) rem(52) rem(-8) #00000026;
-
-      position: absolute;
       width: 90%;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin-bottom: rem(-60);
 
       &__topSection {
         display: flex;
@@ -112,7 +106,7 @@
         margin-bottom: rem(25);
       }
       &__button {
-        padding: 0 !important;
+        padding: rem(10) !important;
       }
     }
 
@@ -121,12 +115,18 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      @include m.respond(tab-port) {
+        margin: 0 auto rem(100) auto;
+      }
     }
     &--2 {
       background-image: url(/images/news/tomatoes.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      @include m.respond(tab-port) {
+        margin: 0 auto rem(100) auto;
+      }
     }
   }
 }
